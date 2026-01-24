@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark-900 text-white antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    @apply border-dark-700;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-800/60 backdrop-blur-xl border border-dark-700/50 rounded-xl shadow-xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-dark-800/80 hover:border-primary-500/30 hover:shadow-primary-500/10;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 border border-dark-600 hover:border-dark-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg shadow-red-500/20 hover:shadow-red-500/30 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-300 mb-1.5;
+  }
+
+  .error-text {
+    @apply text-red-400 text-sm mt-1;
+  }
+
+  /* Score badge styles */
+  .score-excellent {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+
+  .score-good {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .score-fair {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+
+  .score-poor {
+    @apply bg-orange-500/20 text-orange-400 border border-orange-500/30;
+  }
+
+  .score-critical {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  /* Status badges */
+  .status-draft {
+    @apply bg-gray-500/20 text-gray-400 border border-gray-500/30;
+  }
+
+  .status-active {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+
+  .status-completed {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .status-archived {
+    @apply bg-dark-600/50 text-gray-500 border border-dark-500;
+  }
+
+  /* Role badges */
+  .role-admin {
+    @apply bg-purple-500/20 text-purple-400 border border-purple-500/30;
+  }
+
+  .role-inspector {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .role-viewer {
+    @apply bg-gray-500/20 text-gray-400 border border-gray-500/30;
+  }
+
+  /* Scrollbar styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-dark-800 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-dark-600 rounded-full hover:bg-dark-500;
+  }
+
+  /* Sidebar */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-dark-700/50 transition-all duration-200;
+  }
+
+  .sidebar-link-active {
+    @apply sidebar-link bg-primary-600/20 text-primary-400 border-l-2 border-primary-500;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px theme('colors.primary.500 / 20%');
+    }
+    to {
+      box-shadow: 0 0 30px theme('colors.primary.500 / 40%');
+    }
+  }
+}
